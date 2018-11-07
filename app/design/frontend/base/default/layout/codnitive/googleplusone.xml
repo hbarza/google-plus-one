@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_GooglePlusOne
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+<layout version="1.2.0">
+
+    <catalog_product_view>
+        <reference name="alert.urls">
+            <block type="googleplusone/button" name="codnitive.googleplusone.beforeprice" as="codnitive-googleplusone" after="-">
+                <action method="setTemplate" modules="codnitivegoogle/googleplusoneproduct/" options="enabled,place" conditions="1,before_price" operation="0.1">
+                    <template>codnitive/googleplusone/button.phtml</template>
+                </action>
+            </block>
+        </reference>
+        <reference name="product.info.extrahint">
+            <block type="googleplusone/button" name="codnitive.googleplusone.afterprice" as="codnitive-googleplusone" after="-">
+                <action method="setTemplate" modules="codnitivegoogle/googleplusoneproduct/" options="enabled,place" conditions="1,after_price" operation="0.1">
+                    <template>codnitive/googleplusone/button.phtml</template>
+                </action>
+            </block>
+        </reference>
+        <reference name="product.info.addtocart">
+            <block type="googleplusone/button" name="codnitive.googleplusone.afteraddto" as="codnitive-googleplusone" after="-">
+                <action method="setTemplate" modules="codnitivegoogle/googleplusoneproduct/" options="enabled,place" conditions="1,after_addto" operation="0.1">
+                    <template>codnitive/googleplusone/button.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </catalog_product_view>
+    
+</layout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_GooglePlusOne
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+
+<config>
+    <modules>
+        <Codnitive_GooglePlusOne>
+            <version>1.0.00</version>
+            <title>Google +1 Button</title>
+            <link><![CDATA[http://www.codnitive.com/]]></link>
+            <codPool>community</codPool>
+        </Codnitive_GooglePlusOne>
+    </modules>
+    <global>
+        <blocks>
+            <googleplusone>
+                <class>Codnitive_GooglePlusOne_Block</class>
+            </googleplusone>
+        </blocks>
+        <helpers>
+            <googleplusone>
+                <class>Codnitive_GooglePlusOne_Helper</class>
+            </googleplusone>
+        </helpers>
+        <models>
+            <googleplusone>
+                <class>Codnitive_GooglePlusOne_Model</class>
+            </googleplusone>
+        </models>
+    </global>
+	
+    <adminhtml>
+        <translate>
+            <modules>
+                <Codnitive_GooglePlusOne>
+                    <files>
+                        <default>Codnitive_GooglePlusOne.csv</default>
+                    </files>
+                </Codnitive_GooglePlusOne>
+            </modules>
+        </translate>
+    </adminhtml>
+    
+    <frontend>
+        <layout>
+            <updates>
+                <googleplusone>
+                    <file>codnitive/googleplusone.xml</file>
+                </googleplusone>
+            </updates>
+        </layout>
+    </frontend>
+	
+    <default>
+        <codnitivegoogle>
+            <googleplusone>
+                <active>0</active>
+                <chkfrq>518400</chkfrq>
+                <frtrn>1</frtrn>
+            </googleplusone>
+            
+            <googleplusoneproduct>
+                <enabled>0</enabled>
+                <place>before_price</place>
+                <size>standard</size>
+                <annotation>bubble</annotation>
+                <inline_width>450</inline_width>
+                <inline_width_custom>250</inline_width_custom>
+                <language>store</language>
+                <language_custom></language_custom>
+                <asynchronous>1</asynchronous>
+                <html5>1</html5>
+                <parse_tags>onload</parse_tags>
+                <align>left</align>
+                <custom_expandto>0</custom_expandto>
+                <expandto></expandto>
+                <recommendations>1</recommendations>
+            </googleplusoneproduct>
+        </codnitivegoogle>
+    </default>
+</config>

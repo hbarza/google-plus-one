@@ -1,0 +1,67 @@
+<?php
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_GooglePlusOne
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+
+/**
+ * Google +1 Button
+ *
+ * @see Codnitive_GooglePlusOne_Block_Button
+ */
+?>
+<?php 
+    $_buttonAttributes = $this->getButtonAttributes();
+    $_language   = $this->getLanguage();
+?>
+<div class="google-plus-one">
+    <?php if ($this->isAsynchronous()): ?>
+        <?php if ($this->isHtml5()): ?>
+        <div class="g-plusone" <?php echo $_buttonAttributes ?>></div>
+        <?php else: ?>
+        <g:plusone <?php echo $_buttonAttributes ?>></g:plusone>
+        <?php endif; ?>
+
+        <script type="text/javascript">
+            window.___gcfg = {lang: '<?php echo $_language ?>'};
+
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+    <?php else: ?>
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+          {lang: '<?php echo $_language ?>'<?php if ($this->isExplicit()) echo ", parsetags: 'explicit'" ?>}
+        </script>
+
+        <?php if ($this->isHtml5()): ?>
+        <div class="g-plusone" <?php echo $_buttonAttributes ?>></div>
+        <?php else: ?>
+        <g:plusone <?php echo $_buttonAttributes ?>></g:plusone>
+        <?php endif; ?>
+        
+        <?php if ($this->isExplicit()): ?>
+        <script type="text/javascript">gapi.plusone.go();</script>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>
